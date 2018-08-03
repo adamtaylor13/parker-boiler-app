@@ -38,7 +38,8 @@ server.start((err) => {
     throw err;
   }
   // Once started, connect to Mongo through Mongoose
-  mongoose.connect(process.env.DB_URL, {useMongoClient: true}, (err) => {
+  // useMongoClient was deprecated and they recommended using 'useNewUrlParser' ¯\_(ツ)_/¯
+  mongoose.connect(process.env.DB_URL, { useNewUrlParser: true }, (err) => {
     if (err) {
       throw err;
     }
