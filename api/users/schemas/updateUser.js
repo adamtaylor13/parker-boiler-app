@@ -5,7 +5,8 @@ Joi.objectId = require('joi-objectid')(Joi);
 
 const payloadSchema = Joi.object({
   email: Joi.string().email(),
-  admin: Joi.boolean()
+  admin: Joi.boolean(),
+  password: Joi.string()
 });
 
 const paramsSchema = Joi.object({

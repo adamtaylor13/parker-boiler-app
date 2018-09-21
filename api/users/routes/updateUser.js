@@ -3,7 +3,7 @@
 const Boom = require('boom');
 const User = require('../model/User');
 const updateUserSchema = require('../schemas/updateUser');
-const verifyUniqueUser = require('../util/userFunctions').verifyUniqueUser;
+const { verifyUniqueUser, hashPassword } = require('../util/userFunctions');
 
 module.exports = {
   method: 'PATCH',
@@ -23,7 +23,7 @@ module.exports = {
             throw Boom.notFound('User not found!');
           }
           res({message: 'User updated!'});
-        });      
+        });
     },
     validate: {
       payload: updateUserSchema.payloadSchema,
@@ -34,5 +34,4 @@ module.exports = {
       scope: ['admin']
     }
   }
-  
 }

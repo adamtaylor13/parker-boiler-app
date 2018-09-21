@@ -19,9 +19,11 @@
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.2.2",
-    "mongoose": "^5.1.4"
+    "mongoose": "^5.1.4",
+    "postmark": "^1.6.1"
   },
   "scripts": {
-    "serve": "source .env && nodemon server.js"
+    "serve": "source .env && nodemon server.js",
+    "mail-test": "node mail.js"
   }
 }
